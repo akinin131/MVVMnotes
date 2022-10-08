@@ -17,23 +17,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             NotesAppTheme{
-//                Scaffold (
-//                    topBar = {
-//                        TopAppBar(
-//                            title = { Text(text = "fege jknj") },
-//                            backgroundColor = Color.Blue,
-//                            contentColor = Color.Black,
-//                            elevation = 12.dp) },
-//                    content = {
-//                        Surface(
-//                            modifier = Modifier.fillMaxSize(),
-//                            color = MaterialTheme.colors.background
-//                        ) {
-//                            NotesNavHost()
-//                        }
-//                    }
-//                )
-
                 Scaffold(
                     topBar = {
                         TopAppBar(
@@ -48,19 +31,9 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 )
-
             }
         }
     }
-
-    @Composable
-    fun DefaultPreview() {
-        NotesAppTheme {
-
-        }
-    }
-
-
 }
 
 

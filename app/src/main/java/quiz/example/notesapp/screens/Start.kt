@@ -34,16 +34,18 @@ fun Start(navController: NavHostController) {
             verticalArrangement = Arrangement.Center) {
             Text(text = "Что мы будем изпользовать?")
             Button(onClick = {
-                mViewModel.initDatabase(TYPE_ROOM)
-                navController.navigate(route = NavRout.Main.route) },
+                mViewModel.initDatabase(TYPE_ROOM){
+                    navController.navigate(route = NavRout.Main.route)
+                }
+                 },
                 modifier = Modifier
                     .width(200.dp)
                     .padding(vertical = 22.dp)) {
                 Text(text = "Room DataBase")
             }
             Button(onClick = {
-                mViewModel.initDatabase(TYPE_FIREBASE)
-                navController.navigate(route = NavRout.Main.route) },
+                mViewModel.initDatabase(TYPE_FIREBASE){navController.navigate(route = NavRout.Main.route) }
+                },
                 modifier = Modifier
                     .width(200.dp)
                     .padding(vertical = 2.dp)) {

@@ -37,33 +37,20 @@ fun Main(navController: NavHostController) {
     val context = LocalContext.current
     val mViewModel: MainViewModel = viewModel(factory = ResultViewModelFactory(context.applicationContext as Application) )
 
-    val notes = mViewModel.readTest.observeAsState(listOf()).value
+
     Scaffold(floatingActionButton = {
         FloatingActionButton(
             onClick = { navController.navigate(NavRout.Add.route) }) {
             Icon(imageVector = Icons.Filled.Add,
                 contentDescription = "Add icons",
                 tint = Color.White)
-
         }
     })
     {
-    /*    Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
-            NoteItem(title = "Porno", subTitle = "Sex", navController = navController)
-            NoteItem(title = "Porno", subTitle = "Sex", navController = navController)
-            NoteItem(title = "Porno", subTitle = "Sex", navController = navController)
-            NoteItem(title = "Porno", subTitle = "Sex", navController = navController)
-
-        }*/
-        LazyColumn{
-            items(notes){ note ->
-                NoteItem(note = note, navController = navController)
-
-            }
         }
 
     }
-}
+
 
 @Composable
 fun NoteItem(note:Note, navController: NavHostController) {
@@ -72,7 +59,6 @@ fun NoteItem(note:Note, navController: NavHostController) {
         .padding(vertical = 8.dp, horizontal = 4.dp)
         .clickable { navController.navigate(NavRout.Note.route) },
         elevation = 3.dp
-
     ) {
         Column(modifier = Modifier.padding(vertical = 8.dp),
             horizontalAlignment = Alignment.CenterHorizontally) {
